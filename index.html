@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hippo Biosciences</title>
+<meta name="description" content="Hippo Biosciences develops Hippo/YAP-targeted therapeutics for ovarian cancer, cervical cancer, and fertility preservation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine:#3E0D1C;--rose:#A83D60;--blush:#EFA0BB;--petal:#F5D4DF;
+  --cream:#FDF8F9;--mist:#F2EAED;--ink:#180610;--mid:#7A4558;--border:#E8D2DA;
+  --ff-h:'Raleway',sans-serif;--ff-b:'Cormorant Garamond',serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{font-family:var(--ff-b);background:var(--cream);color:var(--wine);overflow-x:hidden}
+a{color:inherit}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,248,249,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;height:64px;padding:0 24px;gap:24px}
+.nav-logo{display:flex;align-items:center;flex-shrink:0;text-decoration:none}
+.nav-logo svg{height:40px;width:auto}
+.nav-links{display:flex;gap:28px;list-style:none;margin-left:auto}
+.nav-links a{font-family:var(--ff-h);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--mid);text-decoration:none}
+.nav-links a:hover{color:var(--rose)}
+.nav-cta{font-family:var(--ff-h);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--rose);padding:9px 20px;text-decoration:none;white-space:nowrap}
+.nav-cta:hover{background:var(--wine)}
+
+/* Shared */
+.container{max-width:1200px;margin:0 auto;padding:0 60px}
+.section{padding:90px 0}
+.eyebrow{font-family:var(--ff-h);font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:20px;height:1px;background:currentColor}
+.eyebrow.light{color:var(--blush)}
+h2{font-family:var(--ff-h);font-size:clamp(28px,3vw,42px);font-weight:800;line-height:1.1;color:var(--wine);margin-bottom:16px}
+h2 em{font-style:normal;color:var(--rose)}
+h2.light{color:#fff}
+h2.light em{color:var(--blush)}
+h3{font-family:var(--ff-h);font-size:16px;font-weight:800;color:var(--wine);margin-bottom:10px}
+.lead{font-size:19px;line-height:1.75;color:var(--mid);max-width:640px}
+.body-sm{font-size:15px;line-height:1.7;color:var(--mid)}
+.btn{display:inline-block;font-family:var(--ff-h);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:13px 30px;text-decoration:none;transition:all .2s}
+.btn-rose{color:#fff;background:var(--rose)}
+.btn-rose:hover{background:var(--wine)}
+.btn-ghost{color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{border-color:var(--blush);color:var(--blush)}
+.tag{display:inline-block;font-family:var(--ff-h);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);background:var(--petal);padding:4px 10px;margin:16px 6px 0 0}
+
+/* Hero */
+.hero{margin-top:64px;min-height:calc(100vh - 64px);background:var(--wine);display:grid;grid-template-columns:1.1fr .9fr;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 80% at 72% 50%,rgba(168,61,96,.22) 0%,transparent 70%)}
+.hero-text{position:relative;padding:80px 40px 80px 80px}
+.hero h1{font-family:var(--ff-h);font-size:clamp(40px,5.2vw,70px);font-weight:800;line-height:1.04;color:#fff;margin-bottom:24px}
+.hero h1 em{font-style:normal;color:var(--blush)}
+.hero p{font-size:19px;line-height:1.75;color:rgba(255,255,255,.7);max-width:500px;margin-bottom:40px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-vis{position:relative;display:flex;justify-content:center;padding:60px}
+
+/* Programs */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px}
+.card{background:#fff;padding:40px 34px}
+.card-num{font-family:var(--ff-h);font-size:48px;font-weight:800;color:var(--petal);line-height:1;margin-bottom:18px}
+
+/* Mission */
+.mission{background:var(--rose);padding:80px 24px;text-align:center}
+.mission p{font-style:italic;font-size:clamp(22px,2.6vw,34px);line-height:1.5;color:#fff;max-width:860px;margin:0 auto}
+
+/* Science */
+.science{background:var(--wine)}
+.science .lead{color:rgba(255,255,255,.68)}
+.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;margin-top:40px}
+.step{padding:22px 24px;border:1px solid rgba(255,255,255,.12)}
+.step-num{font-family:var(--ff-h);font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--blush);margin-bottom:6px}
+.step-name{font-family:var(--ff-h);font-size:14px;font-weight:700;color:#fff;margin-bottom:6px}
+.step-desc{font-size:15px;line-height:1.6;color:rgba(255,255,255,.62)}
+.dual{margin-top:40px;padding:28px 30px;border-left:3px solid var(--blush);background:rgba(255,255,255,.05);color:rgba(255,255,255,.75);font-size:17px;line-height:1.7}
+.dual strong{color:#fff;font-family:var(--ff-h);font-size:14px}
+
+/* Team */
+.team-lead{display:grid;grid-template-columns:240px 1fr;background:#fff;margin-top:48px}
+.team-photo{background:var(--mist);display:flex;align-items:center;justify-content:center;padding:32px 24px}
+.team-photo img{width:180px;height:220px;object-fit:cover;object-position:center top;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;border:3px solid var(--border)}
+.team-body{padding:34px 38px}
+.team-name{font-family:var(--ff-h);font-size:17px;font-weight:800;color:var(--wine);margin-bottom:4px}
+.team-role{font-family:var(--ff-h);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rose);margin-bottom:12px}
+.team-body p+p{margin-top:12px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2px}
+.team-card{background:#fff}
+.team-card .team-photo{height:250px}
+.avatar{width:96px;height:96px;border-radius:50%;background:var(--petal);display:flex;align-items:center;justify-content:center;font-family:var(--ff-h);font-weight:800;font-size:28px;color:var(--rose)}
+
+/* Publications */
+.pubs{margin-top:40px;display:flex;flex-direction:column;gap:3px}
+.pub{background:#fff;padding:22px 28px;display:grid;grid-template-columns:56px 1fr auto;gap:20px;align-items:start}
+.pub-year{font-family:var(--ff-h);font-size:14px;font-weight:800;color:var(--rose)}
+.pub-title{font-family:var(--ff-h);font-size:14px;font-weight:700;color:var(--wine);line-height:1.45;margin-bottom:4px}
+.pub-journal{font-family:var(--ff-h);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mid)}
+.pub-link{font-family:var(--ff-h);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rose);text-decoration:none;white-space:nowrap}
+.pub-link:hover{color:var(--wine)}
+
+/* Contact */
+.contact{background:var(--mist)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.c-label{font-family:var(--ff-h);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rose);margin-bottom:8px}
+.c-val{font-size:19px;color:var(--wine);line-height:1.6;margin-bottom:28px}
+.c-val a{text-decoration:none;border-bottom:1px solid var(--blush)}
+
+/* Footer */
+footer{background:var(--ink);padding:48px 0 28px}
+footer .container{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.foot-tag{font-size:15px;line-height:1.7;color:rgba(255,255,255,.5);max-width:340px;margin-top:14px}
+.foot-copy{font-family:var(--ff-h);font-size:10px;line-height:1.9;color:rgba(255,255,255,.35);text-align:right}
+
+@media(max-width:960px){
+  .container{padding:0 20px}
+  .section{padding:64px 0}
+  .nav-inner{padding:0 16px;gap:12px}
+  .nav-links{display:none}
+  .nav-cta{margin-left:auto}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-text{padding:64px 20px}
+  .hero-vis{display:none}
+  .grid3,.team-grid,.steps,.contact-grid{grid-template-columns:1fr}
+  .team-lead{grid-template-columns:1fr}
+  .team-body{padding:28px 22px}
+  .pub{grid-template-columns:1fr;gap:6px;padding:20px}
+  .foot-copy{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo" aria-label="Hippo Biosciences home">
+      <svg viewBox="0 0 300 64" xmlns="http://www.w3.org/2000/svg" height="40">
+        <text id="navHipp" x="8" y="44" font-family="'Raleway',sans-serif" font-size="46" font-weight="800" letter-spacing="2" fill="#3E0D1C"><tspan fill="#A83D60">H</tspan>IPP</text>
+        <path id="navArc" fill="none" stroke="#A83D60" stroke-width="4" stroke-linecap="round"/>
+        <circle id="navDot" r="4" fill="#A83D60"/>
+        <text id="navBio" y="60" font-family="'Raleway',sans-serif" font-size="8" letter-spacing="5" text-anchor="middle" fill="#A83D60">BIOSCIENCES</text>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#science">Science</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#publications">Publications</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Contact Us</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero" id="top">
+  <div class="hero-text">
+    <div class="eyebrow light">Women's Cellular Health</div>
+    <h1>Harnessing the<br><em>Hippo–YAP</em><br>Signaling Axis</h1>
+    <p>Developing Hippo/YAP-targeted therapeutics for gynecological cancers and fertility preservation, built on research from the Wang Laboratory at Massachusetts General Hospital / Harvard Medical School.</p>
+    <div class="hero-actions">
+      <a href="#science" class="btn btn-rose">Our Science</a>
+      <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-vis" aria-hidden="true">
+    <svg viewBox="-10 -10 220 245" width="320" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="cg"><stop offset="0%" stop-color="rgba(168,61,96,.18)"/><stop offset="100%" stop-color="transparent"/></radialGradient>
+        <radialGradient id="ng"><stop offset="0%" stop-color="rgba(239,160,187,.55)"/><stop offset="100%" stop-color="rgba(239,160,187,.08)"/></radialGradient>
+      </defs>
+      <ellipse cx="100" cy="110" rx="108" ry="120" fill="url(#cg)"/>
+      <ellipse cx="100" cy="110" rx="95" ry="108" fill="none" stroke="rgba(239,160,187,.2)" stroke-width="1" stroke-dasharray="3 5"/>
+      <ellipse cx="100" cy="110" rx="80" ry="90" fill="none" stroke="rgba(239,160,187,.4)" stroke-width="1.5" stroke-dasharray="2 4"/>
+      <ellipse cx="100" cy="110" rx="65" ry="75" fill="rgba(168,61,96,.07)" stroke="rgba(239,160,187,.75)" stroke-width="2.5"/>
+      <circle cx="80" cy="92" r="3" fill="rgba(239,160,187,.2)"/><circle cx="118" cy="84" r="2.5" fill="rgba(239,160,187,.18)"/>
+      <circle cx="90" cy="132" r="3" fill="rgba(239,160,187,.15)"/><circle cx="132" cy="108" r="2.5" fill="rgba(239,160,187,.18)"/>
+      <ellipse cx="100" cy="107" rx="26" ry="30" fill="none" stroke="rgba(239,160,187,.55)" stroke-width="1.5" stroke-dasharray="2 3"/>
+      <ellipse cx="100" cy="107" rx="21" ry="25" fill="url(#ng)"/>
+      <circle cx="100" cy="105" r="7" fill="rgba(239,160,187,.7)"/>
+      <ellipse cx="100" cy="28" rx="13" ry="15" fill="rgba(168,61,96,.12)" stroke="rgba(239,160,187,.45)" stroke-width="1.5"/>
+      <circle cx="100" cy="28" r="4" fill="rgba(239,160,187,.5)"/>
+      <text x="100" y="200" font-family="'Raleway',sans-serif" font-size="8.5" font-weight="700" letter-spacing="4" text-anchor="middle" fill="rgba(239,160,187,.55)">YAP · TEAD · LATS1/2</text>
+    </svg>
+  </div>
+</header>
+
+<!-- Programs -->
+<section class="section" id="programs">
+  <div class="container">
+    <div class="eyebrow">Therapeutic Focus</div>
+    <h2>Three Programs,<br><em>One Unified Platform</em></h2>
+    <p class="lead">The Wang Laboratory at MGH identified the Hippo/YAP pathway as a critical driver of female reproductive tract disease. Hippo Biosciences is translating these discoveries into therapies.</p>
+    <div class="grid3">
+      <div class="card">
+        <div class="card-num">01</div>
+        <h3>Ovarian Cancer</h3>
+        <p class="body-sm">Targeting the Hippo/YAP pathway in high-grade serous ovarian cancer (HGSC). YAP was identified as a critical contributor to HGSC development initiated in fallopian tube secretory epithelial cells.</p>
+        <span class="tag">HGSC</span><span class="tag">Fallopian Tube</span>
+      </div>
+      <div class="card">
+        <div class="card-num">02</div>
+        <h3>Fertility Preservation</h3>
+        <p class="body-sm">Restoring ovarian function in young female cancer survivors. Granulosa cell–specific <em>Yap1</em> knockout studies showed that YAP is essential for granulosa cell fate and follicle development.</p>
+        <span class="tag">Cancer Survivors</span><span class="tag">Granulosa Cells</span>
+      </div>
+      <div class="card">
+        <div class="card-num">03</div>
+        <h3>Cervical Cancer</h3>
+        <p class="body-sm">YAP1 hyperactivation can initiate invasive cervical carcinoma independent of HPV. The YAP1–LATS2 feedback loop maintains tissue homeostasis; its disruption drives malignant transformation.</p>
+        <span class="tag">HPV Interaction</span><span class="tag">YAP1–LATS2 Loop</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mission">
+  <p>"The disrupted Hippo/YAP signaling pathway is a critical, targetable vulnerability across female reproductive tract disease — from cancer to infertility. Our mission is to translate this insight into transformative therapies for women."</p>
+</div>
+
+<!-- Science -->
+<section class="section science" id="science">
+  <div class="container">
+    <div class="eyebrow light">Our Science</div>
+    <h2 class="light">The Hippo/YAP<br><em>Signaling Pathway</em></h2>
+    <p class="lead">Research in the Wang Laboratory at the Vincent Center for Reproductive Biology, MGH, established the Hippo/YAP pathway as a key regulator of ovarian, fallopian tube, and cervical tissue — in health and disease.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><div class="step-name">Upstream Signals</div><div class="step-desc">Cell–cell contact, extracellular matrix stiffness, and G-protein coupled receptors converge on the core kinase cascade.</div></div>
+      <div class="step"><div class="step-num">02</div><div class="step-name">MST1/2 Kinase Complex</div><div class="step-desc">MST1/2 forms a complex with SAV1 and phosphorylates LATS1/2, priming it for activation.</div></div>
+      <div class="step"><div class="step-num">03</div><div class="step-name">LATS1/2 Phosphorylates YAP/TAZ</div><div class="step-desc">Phosphorylated YAP/TAZ is held in the cytoplasm and degraded, preventing target gene activation.</div></div>
+      <div class="step"><div class="step-num">04</div><div class="step-name">YAP–TEAD Transcription</div><div class="step-desc">When Hippo is off, nuclear YAP binds TEAD1–4 to drive genes controlling cell growth, survival, and follicle development.</div></div>
+    </div>
+    <div class="dual"><strong>A context-dependent target.</strong> YAP acts as an oncogene in ovarian and cervical cancer, but is essential for healthy granulosa cell function in the normal ovary. This duality guides our tissue-selective approach: inhibiting YAP in cancer programs, and restoring physiological YAP signaling in fertility programs.</div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section" id="team">
+  <div class="container">
+    <div class="eyebrow">Leadership</div>
+    <h2>Our Team</h2>
+    <p class="lead">Founded by scientists from the Wang Laboratory at the Vincent Center for Reproductive Biology, Massachusetts General Hospital / Harvard Medical School.</p>
+
+    <div class="team-lead">
+      <div class="team-photo"><img src="images/sean-hu.jpg" alt="Shunfu (Sean) Hu"></div>
+      <div class="team-body">
+        <div class="team-name">Shunfu (Sean) Hu, PhD, MBA</div>
+        <div class="team-role">Chief Executive Officer &amp; Co-Founder</div>
+        <p class="body-sm">Sean combines scientific training, clinical-stage operating experience, and life sciences capital markets expertise. He holds a PhD in Materials Science from the University of New Hampshire and an MBA from Babson College, and is a named inventor on multiple US patents covering synthetic organ regeneration scaffolds.</p>
+        <p class="body-sm">He previously served as VP of Business Development and Operations at Harvard Apparatus Regenerative Technology (HRGN), a clinical-stage cell-therapy company, and as an M&amp;A advisor at SBB Capital Partners. He is a Managing Director at Castle Placement and a General Partner at Axion Ventures.</p>
+      </div>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo"><img src="images/cheng-wang.jpg" alt="Cheng Wang, PhD"></div>
+        <div class="team-body">
+          <div class="team-name">Cheng Wang, PhD</div>
+          <div class="team-role">Chief Scientific Officer &amp; Co-Founder</div>
+          <p class="body-sm">Investigator, Vincent Center for Reproductive Biology, MGH. Associate Professor of Obstetrics, Gynecology and Reproductive Biology, Harvard Medical School. Principal architect of the Hippo/YAP reproductive tract research program.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><div class="avatar">JL</div></div>
+        <div class="team-body">
+          <div class="team-name">Jiyuan Liu, PhD</div>
+          <div class="team-role">Head of Translational Research</div>
+          <p class="body-sm">Postdoctoral Research Fellow, Wang Lab, MGH. Expertise in single-cell and spatial transcriptomics, machine learning, and genetically modified animal models of female reproductive tract carcinomas.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><div class="avatar">XZ</div></div>
+        <div class="team-body">
+          <div class="team-name">Xingeng (Vincent) Zhao, MS</div>
+          <div class="team-role">Research Scientist, Spatial Genomics</div>
+          <p class="body-sm">MS in Genetics, Columbia University. Focused on spatial transcriptomics for HGSC mechanistic studies and biomarker discovery.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Publications -->
+<section class="section" id="publications" style="background:#fff">
+  <div class="container">
+    <div class="eyebrow">Research</div>
+    <h2>Selected Publications</h2>
+    <p class="lead">Peer-reviewed research from the Wang Laboratory underpinning our programs.</p>
+    <div class="pubs">
+      <div class="pub" style="background:var(--cream)"><div class="pub-year">2019</div><div><div class="pub-title">A Human Papillomavirus-Independent Cervical Cancer Animal Model Reveals Unconventional Mechanisms of Cervical Carcinogenesis</div><div class="pub-journal">Cell Reports · 26(10):2636–2650</div></div><a class="pub-link" href="https://pubmed.ncbi.nlm.nih.gov/30840887/" target="_blank" rel="noopener">PubMed →</a></div>
+      <div class="pub" style="background:var(--cream)"><div class="pub-year">2019</div><div><div class="pub-title">YAP1–LATS2 feedback loop dictates senescent or malignant cell fate to maintain tissue homeostasis</div><div class="pub-journal">EMBO Reports · 20(3):e44948</div></div><a class="pub-link" href="https://pubmed.ncbi.nlm.nih.gov/30755404/" target="_blank" rel="noopener">PubMed →</a></div>
+      <div class="pub" style="background:var(--cream)"><div class="pub-year">2016</div><div><div class="pub-title">YAP induces high-grade serous carcinoma in fallopian tube secretory epithelial cells</div><div class="pub-journal">Oncogene · 35(17):2247–2265</div></div><a class="pub-link" href="https://pubmed.ncbi.nlm.nih.gov/26364602/" target="_blank" rel="noopener">PubMed →</a></div>
+      <div class="pub" style="background:var(--cream)"><div class="pub-year">2015</div><div><div class="pub-title">The Hippo/YAP pathway interacts with EGFR signaling and HPV oncoproteins to regulate cervical cancer progression</div><div class="pub-journal">EMBO Molecular Medicine · 7:1426–1449</div></div><a class="pub-link" href="https://pubmed.ncbi.nlm.nih.gov/26417066/" target="_blank" rel="noopener">PubMed →</a></div>
+      <div class="pub" style="background:var(--cream)"><div class="pub-year">2015</div><div><div class="pub-title">YAP forms autocrine loops with the ERBB pathway to regulate ovarian cancer initiation and progression</div><div class="pub-journal">Oncogene · 34:6040–6054</div></div><a class="pub-link" href="https://pubmed.ncbi.nlm.nih.gov/25798835/" target="_blank" rel="noopener">PubMed →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section contact" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="eyebrow">Get in Touch</div>
+      <h2>Contact Us</h2>
+      <p class="lead" style="margin-bottom:32px">We welcome inquiries from scientists, clinicians, investors, and partners aligned with our mission.</p>
+      <a href="mailto:shu@hippobtx.com" class="btn btn-rose">Email Us</a>
+    </div>
+    <div>
+      <div class="c-label">Email</div>
+      <div class="c-val"><a href="mailto:shu@hippobtx.com">shu@hippobtx.com</a></div>
+      <div class="c-label">Address</div>
+      <div class="c-val">Thier Building, Suite 910<br>60 Blossom Street<br>Boston, MA 02114</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <svg viewBox="0 0 300 64" xmlns="http://www.w3.org/2000/svg" height="36">
+        <text id="footHipp" x="8" y="44" font-family="'Raleway',sans-serif" font-size="46" font-weight="800" letter-spacing="2" fill="#FDF8F9"><tspan fill="#EFA0BB">H</tspan>IPP</text>
+        <path id="footArc" fill="none" stroke="#EFA0BB" stroke-width="4" stroke-linecap="round"/>
+        <circle id="footDot" r="4" fill="#EFA0BB"/>
+        <text id="footBio" y="60" font-family="'Raleway',sans-serif" font-size="8" letter-spacing="5" text-anchor="middle" fill="rgba(239,160,187,0.55)">BIOSCIENCES</text>
+      </svg>
+      <p class="foot-tag">Targeting the Hippo–YAP signaling pathway for transformative therapies in women's health.</p>
+    </div>
+    <div class="foot-copy">© 2026 Hippo Biosciences, Inc. All rights reserved.<br>Investigational programs only. Not approved by the FDA.</div>
+  </div>
+</footer>
+
+<script>
+// Draws the "O" arc + dot of the HIPPO logo next to the "HIPP" text
+function buildLogo(hippId, arcId, dotId, bioId, viewW){
+  const t=document.getElementById(hippId); if(!t) return;
+  const r=15, ls=2, bb=t.getBBox();
+  const p2x=t.getStartPositionOfChar(2).x, p3x=t.getStartPositionOfChar(3).x;
+  const cx_i=p3x+(p3x-p2x)+r+ls/2;
+  const fullW=(cx_i+r+6)-bb.x, shift=(viewW-fullW)/2-bb.x;
+  t.setAttribute('x',(parseFloat(t.getAttribute('x')||0)+shift).toFixed(1));
+  const cx=cx_i+shift;
+  const cy=parseFloat(t.getAttribute('y'))-parseFloat(t.getAttribute('font-size'))*0.72/2;
+  const g=70*Math.PI/180, top=-Math.PI/2;
+  const x1=cx+r*Math.cos(top+g), y1=cy+r*Math.sin(top+g);
+  const x2=cx+r*Math.cos(top-g), y2=cy+r*Math.sin(top-g);
+  document.getElementById(arcId).setAttribute('d',`M ${x1.toFixed(1)},${y1.toFixed(1)} A ${r},${r} 0 1 1 ${x2.toFixed(1)},${y2.toFixed(1)}`);
+  const dot=document.getElementById(dotId);
+  dot.setAttribute('cx',cx.toFixed(1)); dot.setAttribute('cy',(cy-r).toFixed(1));
+  document.getElementById(bioId).setAttribute('x',(((bb.x+shift)+(cx+r+6))/2).toFixed(0));
+}
+document.fonts.ready.then(()=>requestAnimationFrame(()=>{
+  buildLogo('navHipp','navArc','navDot','navBio',300);
+  buildLogo('footHipp','footArc','footDot','footBio',300);
+}));
+</script>
+</body>
+</html>

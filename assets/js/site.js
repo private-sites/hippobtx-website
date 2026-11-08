@@ -60,16 +60,16 @@
     W = canvas.clientWidth; H = canvas.clientHeight;
     canvas.width = W * DPR; canvas.height = H * DPR;
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    var n = Math.round(Math.min(46, Math.max(18, W * H / 26000)));
+    var n = Math.round(Math.min(24, Math.max(10, W * H / 52000)));
     cells = [];
     for (var i = 0; i < n; i++) {
       // bias towards the right-hand side, away from the headline
       var x = W < 760 ? rand(0, W) : rand(W * .52, W + 40);
-      cells.push({ x: x, y: rand(0, H), r: rand(10, 34), vx: rand(-.12, .12), vy: rand(-.1, .1),
+      cells.push({ x: x, y: rand(0, H), r: rand(6, 20), vx: rand(-.12, .12), vy: rand(-.1, .1),
                    ph: rand(0, Math.PI * 2), hot: Math.random() < .35 });
     }
     // a hero "follicle" anchor on wide screens
-    if (W >= 760) cells.push({ x: W * .74, y: H * .48, r: Math.min(130, W * .1), vx: 0, vy: 0, ph: 0, hot: true, big: true });
+    if (W >= 760) cells.push({ x: W * .78, y: H * .5, r: Math.min(78, W * .055), vx: 0, vy: 0, ph: 0, hot: true, big: true });
   }
   function link(a, b) { return Math.hypot(a.x - b.x, a.y - b.y) < 190; }
   function spawnSignal() {
@@ -80,7 +80,7 @@
   }
   function draw(time) {
     ctx.clearRect(0, 0, W, H);
-    ctx.globalAlpha = W < 760 ? .45 : 1;
+    ctx.globalAlpha = W < 760 ? .35 : .7;
     var t = time / 1000;
     // links
     ctx.lineWidth = 1;

@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hippo Biosciences</title>
 <meta name="description" content="Hippo Biosciences develops Hippo/YAP-targeted therapeutics for ovarian cancer, cervical cancer, and fertility preservation.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hippobtx.com/">
+<meta property="og:title" content="Hippo Biosciences">
+<meta property="og:description" content="Hippo/YAP-targeted therapeutics for gynecological cancers and fertility preservation.">
+<meta property="og:image" content="https://hippobtx.com/images/share.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
@@ -80,17 +88,20 @@ h3{font-family:var(--ff-h);font-size:16px;font-weight:800;color:var(--wine);marg
 .dual strong{color:#fff;font-family:var(--ff-h);font-size:14px}
 
 /* Team */
-.team-lead{display:grid;grid-template-columns:240px 1fr;background:#fff;margin-top:48px}
-.team-photo{background:var(--mist);display:flex;align-items:center;justify-content:center;padding:32px 24px}
-.team-photo img{width:180px;height:220px;object-fit:cover;object-position:center top;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;border:3px solid var(--border)}
-.team-body{padding:34px 38px}
-.team-name{font-family:var(--ff-h);font-size:17px;font-weight:800;color:var(--wine);margin-bottom:4px}
-.team-role{font-family:var(--ff-h);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rose);margin-bottom:12px}
-.team-body p+p{margin-top:12px}
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:2px}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:48px}
 .team-card{background:#fff}
-.team-card .team-photo{height:250px}
-.avatar{width:96px;height:96px;border-radius:50%;background:var(--petal);display:flex;align-items:center;justify-content:center;font-family:var(--ff-h);font-weight:800;font-size:28px;color:var(--rose)}
+.team-photo{background:var(--mist);display:flex;align-items:center;justify-content:center;height:280px}
+.team-photo img{width:180px;height:220px;object-fit:cover;object-position:center top;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;border:3px solid var(--border)}
+.team-body{padding:32px 36px 38px}
+.team-name{font-family:var(--ff-h);font-size:18px;font-weight:800;color:var(--wine);margin-bottom:4px}
+.team-role{font-family:var(--ff-h);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rose);margin-bottom:14px}
+.team-body p+p{margin-top:12px}
+
+/* Mobile menu */
+.menu-btn{display:none;background:none;border:1px solid var(--border);width:40px;height:36px;cursor:pointer;color:var(--wine);font-size:18px;line-height:1}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;z-index:99;background:var(--cream);border-bottom:1px solid var(--border);box-shadow:0 12px 30px rgba(62,13,28,.1)}
+.mobile-menu a{display:block;padding:16px 20px;border-top:1px solid var(--border);font-family:var(--ff-h);font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--wine);text-decoration:none}
+.mobile-menu.open{display:block}
 
 /* Publications */
 .pubs{margin-top:40px;display:flex;flex-direction:column;gap:3px}
@@ -120,11 +131,12 @@ footer .container{display:flex;justify-content:space-between;align-items:flex-en
   .nav-inner{padding:0 16px;gap:12px}
   .nav-links{display:none}
   .nav-cta{margin-left:auto}
+  .menu-btn{display:block}
   .hero{grid-template-columns:1fr;min-height:auto}
   .hero-text{padding:64px 20px}
   .hero-vis{display:none}
   .grid3,.team-grid,.steps,.contact-grid{grid-template-columns:1fr}
-  .team-lead{grid-template-columns:1fr}
+  .team-photo{height:260px}
   .team-body{padding:28px 22px}
   .pub{grid-template-columns:1fr;gap:6px;padding:20px}
   .foot-copy{text-align:left}
@@ -150,15 +162,23 @@ footer .container{display:flex;justify-content:space-between;align-items:flex-en
       <li><a href="#publications">Publications</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Contact Us</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#programs">Programs</a>
+  <a href="#science">Science</a>
+  <a href="#team">Team</a>
+  <a href="#publications">Publications</a>
+  <a href="#contact">Contact</a>
+</div>
 
 <!-- Hero -->
 <header class="hero" id="top">
   <div class="hero-text">
     <div class="eyebrow light">Women's Cellular Health</div>
     <h1>Harnessing the<br><em>Hippo–YAP</em><br>Signaling Axis</h1>
-    <p>Developing Hippo/YAP-targeted therapeutics for gynecological cancers and fertility preservation, built on research from the Wang Laboratory at Massachusetts General Hospital / Harvard Medical School.</p>
+    <p>Developing Hippo/YAP-targeted therapeutics for gynecological cancers and fertility preservation, built on more than a decade of peer-reviewed research into the Hippo/YAP pathway in the female reproductive tract.</p>
     <div class="hero-actions">
       <a href="#science" class="btn btn-rose">Our Science</a>
       <a href="#contact" class="btn btn-ghost">Get in Touch</a>
@@ -191,7 +211,7 @@ footer .container{display:flex;justify-content:space-between;align-items:flex-en
   <div class="container">
     <div class="eyebrow">Therapeutic Focus</div>
     <h2>Three Programs,<br><em>One Unified Platform</em></h2>
-    <p class="lead">The Wang Laboratory at MGH identified the Hippo/YAP pathway as a critical driver of female reproductive tract disease. Hippo Biosciences is translating these discoveries into therapies.</p>
+    <p class="lead">Research led by our co-founder, Dr. Cheng Wang, has shown that the Hippo/YAP pathway plays a central role in female reproductive tract disease. Hippo Biosciences aims to translate these discoveries into new therapies for women.</p>
     <div class="grid3">
       <div class="card">
         <div class="card-num">01</div>
@@ -202,7 +222,7 @@ footer .container{display:flex;justify-content:space-between;align-items:flex-en
       <div class="card">
         <div class="card-num">02</div>
         <h3>Fertility Preservation</h3>
-        <p class="body-sm">Restoring ovarian function in young female cancer survivors. Granulosa cell–specific <em>Yap1</em> knockout studies showed that YAP is essential for granulosa cell fate and follicle development.</p>
+        <p class="body-sm">Aiming to protect and restore ovarian function in young female cancer survivors. Granulosa cell–specific <em>Yap1</em> knockout studies showed that YAP is essential for granulosa cell fate and follicle development.</p>
         <span class="tag">Cancer Survivors</span><span class="tag">Granulosa Cells</span>
       </div>
       <div class="card">
@@ -224,7 +244,7 @@ footer .container{display:flex;justify-content:space-between;align-items:flex-en
   <div class="container">
     <div class="eyebrow light">Our Science</div>
     <h2 class="light">The Hippo/YAP<br><em>Signaling Pathway</em></h2>
-    <p class="lead">Research in the Wang Laboratory at the Vincent Center for Reproductive Biology, MGH, established the Hippo/YAP pathway as a key regulator of ovarian, fallopian tube, and cervical tissue — in health and disease.</p>
+    <p class="lead">Research in the Wang Laboratory has identified the Hippo/YAP pathway as a key regulator of ovarian, fallopian tube, and cervical tissue — in health and disease.</p>
     <div class="steps">
       <div class="step"><div class="step-num">01</div><div class="step-name">Upstream Signals</div><div class="step-desc">Cell–cell contact, extracellular matrix stiffness, and G-protein coupled receptors converge on the core kinase cascade.</div></div>
       <div class="step"><div class="step-num">02</div><div class="step-name">MST1/2 Kinase Complex</div><div class="step-desc">MST1/2 forms a complex with SAV1 and phosphorylates LATS1/2, priming it for activation.</div></div>
@@ -240,41 +260,26 @@ footer .container{display:flex;justify-content:space-between;align-items:flex-en
   <div class="container">
     <div class="eyebrow">Leadership</div>
     <h2>Our Team</h2>
-    <p class="lead">Founded by scientists from the Wang Laboratory at the Vincent Center for Reproductive Biology, Massachusetts General Hospital / Harvard Medical School.</p>
-
-    <div class="team-lead">
-      <div class="team-photo"><img src="images/sean-hu.jpg" alt="Shunfu (Sean) Hu"></div>
-      <div class="team-body">
-        <div class="team-name">Shunfu (Sean) Hu, PhD, MBA</div>
-        <div class="team-role">Chief Executive Officer &amp; Co-Founder</div>
-        <p class="body-sm">Sean Hu, Ph.D., MBA is General Partner of Axion Ventures, an early-stage AI and healthcare buildout fund, and serves as a venture partner across several other funds. He is also a Managing Director and investment banker at Castle Placement, a FINRA/SIPC-registered private capital investment bank, and a Partner and M&amp;A advisor at SBB Capital Partners.</p>
-        <p class="body-sm">Earlier in his career, Sean spent more than a decade as a senior executive in the biotechnology and medical device industries. He holds an MBA from Babson College and a Ph.D. in materials science, and is FINRA Series 7, 63, and 79 licensed.</p>
-      </div>
-    </div>
+    <p class="lead">Hippo Biosciences was founded by a reproductive biologist who has spent more than a decade studying the Hippo/YAP pathway, and a biotech operator and investor with deep experience building and financing life sciences companies.</p>
 
     <div class="team-grid">
       <div class="team-card">
-        <div class="team-photo"><img src="images/cheng-wang.jpg" alt="Cheng Wang, PhD"></div>
+        <div class="team-photo"><img src="images/sean-hu.jpg" alt="Sean Hu, Ph.D., MBA"></div>
         <div class="team-body">
-          <div class="team-name">Cheng Wang, PhD</div>
+          <div class="team-name">Shunfu (Sean) Hu, Ph.D., MBA</div>
+          <div class="team-role">Chief Executive Officer &amp; Co-Founder</div>
+          <p class="body-sm">Sean co-founded Hippo Biosciences and leads the company's strategy, financing, and partnerships. He brings more than a decade of senior operating experience in biotechnology and medical devices, most recently as Vice President of Business Development and Operations at Harvard Apparatus Regenerative Technology (Biostage), a clinical-stage regenerative medicine company, following earlier roles at Smith &amp; Nephew and Bioventus. He is a named inventor on multiple patents in organ regeneration.</p>
+          <p class="body-sm">Sean is also an experienced life sciences investor and investment banker. He is General Partner of Axion Ventures, an early-stage AI and healthcare fund, and a Managing Director at Castle Placement, a FINRA/SIPC-registered private capital investment bank, where he advises life sciences, medtech, and clean energy companies on private capital raises. He is a Partner and M&amp;A advisor at SBB Capital Partners, with long-standing relationships among U.S. and Asian institutional investors.</p>
+          <p class="body-sm">He holds a Ph.D. in materials science from the University of New Hampshire and an MBA from Babson College.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="images/cheng-wang.jpg" alt="Cheng Wang, Ph.D."></div>
+        <div class="team-body">
+          <div class="team-name">Cheng Wang, Ph.D.</div>
           <div class="team-role">Chief Scientific Officer &amp; Co-Founder</div>
-          <p class="body-sm">Investigator, Vincent Center for Reproductive Biology, MGH. Associate Professor of Obstetrics, Gynecology and Reproductive Biology, Harvard Medical School. Principal architect of the Hippo/YAP reproductive tract research program.</p>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="team-photo"><div class="avatar">JL</div></div>
-        <div class="team-body">
-          <div class="team-name">Jiyuan Liu, PhD</div>
-          <div class="team-role">Head of Translational Research</div>
-          <p class="body-sm">Postdoctoral Research Fellow, Wang Lab, MGH. Expertise in single-cell and spatial transcriptomics, machine learning, and genetically modified animal models of female reproductive tract carcinomas.</p>
-        </div>
-      </div>
-      <div class="team-card">
-        <div class="team-photo"><div class="avatar">XZ</div></div>
-        <div class="team-body">
-          <div class="team-name">Xingeng (Vincent) Zhao, MS</div>
-          <div class="team-role">Research Scientist, Spatial Genomics</div>
-          <p class="body-sm">MS in Genetics, Columbia University. Focused on spatial transcriptomics for HGSC mechanistic studies and biomarker discovery.</p>
+          <p class="body-sm">Dr. Wang is a reproductive biologist and the principal architect of the Hippo/YAP reproductive tract research program that underpins Hippo Biosciences. His laboratory was among the first to establish the role of Hippo/YAP signaling in ovarian follicle development, high-grade serous ovarian cancer, and cervical cancer.</p>
+          <p class="body-sm">His work has been published in journals including <em>Cell Reports</em>, <em>EMBO Reports</em>, <em>EMBO Molecular Medicine</em>, <em>Oncogene</em>, and <em>FASEB Journal</em>, and has been supported by the National Institutes of Health and private foundations.</p>
         </div>
       </div>
     </div>
@@ -304,13 +309,13 @@ footer .container{display:flex;justify-content:space-between;align-items:flex-en
       <div class="eyebrow">Get in Touch</div>
       <h2>Contact Us</h2>
       <p class="lead" style="margin-bottom:32px">We welcome inquiries from scientists, clinicians, investors, and partners aligned with our mission.</p>
-      <a href="mailto:shu@hippobtx.com" class="btn btn-rose">Email Us</a>
+      <a href="mailto:shu@axion.ventures" class="btn btn-rose">Email Us</a>
     </div>
     <div>
       <div class="c-label">Email</div>
-      <div class="c-val"><a href="mailto:shu@hippobtx.com">shu@hippobtx.com</a></div>
-      <div class="c-label">Address</div>
-      <div class="c-val">Thier Building, Suite 910<br>60 Blossom Street<br>Boston, MA 02114</div>
+      <div class="c-val"><a href="mailto:shu@axion.ventures">shu@axion.ventures</a></div>
+      <div class="c-label">Location</div>
+      <div class="c-val">Boston, Massachusetts</div>
     </div>
   </div>
 </section>
@@ -326,7 +331,7 @@ footer .container{display:flex;justify-content:space-between;align-items:flex-en
       </svg>
       <p class="foot-tag">Targeting the Hippo–YAP signaling pathway for transformative therapies in women's health.</p>
     </div>
-    <div class="foot-copy">© 2026 Hippo Biosciences, Inc. All rights reserved.<br>Investigational programs only. Not approved by the FDA.</div>
+    <div class="foot-copy">© 2026 Hippo Biosciences, Inc. All rights reserved.<br>Hippo Biosciences' product candidates are investigational and have not been<br>approved by the FDA or any other regulatory authority.</div>
   </div>
 </footer>
 
@@ -349,6 +354,16 @@ function buildLogo(hippId, arcId, dotId, bioId, viewW){
   dot.setAttribute('cx',cx.toFixed(1)); dot.setAttribute('cy',(cy-r).toFixed(1));
   document.getElementById(bioId).setAttribute('x',(((bb.x+shift)+(cx+r+6))/2).toFixed(0));
 }
+// Mobile menu
+const menuBtn=document.getElementById('menuBtn'), mobileMenu=document.getElementById('mobileMenu');
+menuBtn.addEventListener('click',()=>{
+  const open=mobileMenu.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded',open);
+});
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  mobileMenu.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false');
+}));
+
 document.fonts.ready.then(()=>requestAnimationFrame(()=>{
   buildLogo('navHipp','navArc','navDot','navBio',300);
   buildLogo('footHipp','footArc','footDot','footBio',300);

@@ -69,7 +69,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 .site-header{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .3s,box-shadow .3s,border-color .3s;border-bottom:1px solid transparent}
 .site-header .wrap{display:flex;align-items:center;height:76px;gap:28px}
 .brand{display:block;flex-shrink:0}
-.brand img{height:42px;width:auto}
+.brand img{height:36px;width:auto}
 .brand .on-dark{display:none}
 .nav{display:flex;gap:30px;list-style:none;margin-left:auto}
 .nav a{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--wine);padding:6px 0;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s}
@@ -231,7 +231,7 @@ a.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:va
 /* ---------- Footer ---------- */
 .site-footer{background:var(--ink);color:rgba(255,255,255,.6);padding:80px 0 34px;font-size:15px}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:40px}
-.foot-grid img{height:46px;width:auto;margin-bottom:20px}
+.foot-grid img{height:34px;width:auto;margin-bottom:22px}
 .foot-grid h4{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blush);margin-bottom:16px}
 .foot-grid ul{list-style:none;display:grid;gap:10px}
 .foot-grid a{color:rgba(255,255,255,.7);text-decoration:none}
@@ -269,7 +269,7 @@ a.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:va
 }
 @media (max-width:680px){
   body{font-size:16px}
-  .brand img{height:36px}
+  .brand img{height:30px}
   .grid-3,.contact-cards,.contact-meta{grid-template-columns:1fr}
   .stat{padding:26px 18px}
   .pub{grid-template-columns:1fr;gap:8px;padding:22px}
